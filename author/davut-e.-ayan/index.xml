@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Davut E. Ayan | Academic</title>
+    <link>https://academic-demo.netlify.app/author/davut-e.-ayan/</link>
+      <atom:link href="https://academic-demo.netlify.app/author/davut-e.-ayan/index.xml" rel="self" type="application/rss+xml" />
+    <description>Davut E. Ayan</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <image>
+      <url>https://academic-demo.netlify.app/author/davut-e.-ayan/avatar_hu399aae5fbfde5d30271d1627c9a05794_1170495_270x270_fill_q75_lanczos_center.jpg</url>
+      <title>Davut E. Ayan</title>
+      <link>https://academic-demo.netlify.app/author/davut-e.-ayan/</link>
+    </image>
+    
+  </channel>
+</rss>

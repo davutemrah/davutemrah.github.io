@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://academic-demo.netlify.app/courses/example/python/</loc>
+    <loc>https://academic-demo.netlify.app/courses_archive/example/python/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://academic-demo.netlify.app/courses/example/visualization/</loc>
+    <loc>https://academic-demo.netlify.app/courses_archive/example/visualization/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://academic-demo.netlify.app/courses/example/stats/</loc>
+    <loc>https://academic-demo.netlify.app/courses_archive/example/stats/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://academic-demo.netlify.app/</loc>
@@ -44,10 +44,13 @@
     <loc>https://academic-demo.netlify.app/post/first-post/</loc>
     <lastmod>2021-08-21T20:37:02-05:00</lastmod>
   </url><url>
-    <loc>https://academic-demo.netlify.app/courses/</loc>
+    <loc>https://academic-demo.netlify.app/courses_archive/</loc>
     <lastmod>2021-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://academic-demo.netlify.app/courses/example/</loc>
+    <loc>https://academic-demo.netlify.app/courses_archive/example/</loc>
+    <lastmod>2021-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://academic-demo.netlify.app/courses/</loc>
     <lastmod>2021-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://academic-demo.netlify.app/publication-type/3/</loc>

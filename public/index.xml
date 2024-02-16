@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Academic</title>
+    <title></title>
     <link>https://davutemrah.github.io/</link>
       <atom:link href="https://davutemrah.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <description>Academic</description>
+    <description></description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davutemrah.github.io/media/icon_hu6152fefe63ed452fcffb31cfaea69f6e_14112_512x512_fill_lanczos_center_3.png</url>
-      <title>Academic</title>
+      <title></title>
       <link>https://davutemrah.github.io/</link>
     </image>
     
@@ -304,7 +304,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-298431576&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-624198537&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -314,7 +314,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-298431576&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-624198537&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -730,6 +730,92 @@ $$&lt;/p&gt;
 &lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://discord.gg/z8wNYzb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://docs.hugoblox.com/content/slides/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>https://davutemrah.github.io/privacy/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      <guid>https://davutemrah.github.io/privacy/</guid>
+      <description>&lt;p&gt;Last updated: Nov-29-2023&lt;/p&gt;
+&lt;p&gt;Welcome to Davut Ayan&amp;rsquo;s Personal Portfolio Website. This Privacy Policy explains how we collect, use, and protect your personal information. By using this website, you agree to the terms outlined in this policy.&lt;/p&gt;
+&lt;h2 id=&#34;1-information-we-collect&#34;&gt;1. Information We Collect&lt;/h2&gt;
+&lt;h3 id=&#34;11-personal-information&#34;&gt;1.1 Personal Information&lt;/h3&gt;
+&lt;p&gt;We may collect personal information, including but not limited to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Name&lt;/li&gt;
+&lt;li&gt;Email address&lt;/li&gt;
+&lt;li&gt;Contact information&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;12-automatically-collected-information&#34;&gt;1.2 Automatically Collected Information&lt;/h3&gt;
+&lt;p&gt;We may automatically collect non-personal information, such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;IP address&lt;/li&gt;
+&lt;li&gt;Browser type&lt;/li&gt;
+&lt;li&gt;Operating system&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-how-we-use-your-information&#34;&gt;2. How We Use Your Information&lt;/h2&gt;
+&lt;p&gt;We use the collected information for the following purposes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;To respond to your inquiries&lt;/li&gt;
+&lt;li&gt;To improve our website and user experience&lt;/li&gt;
+&lt;li&gt;To send periodic emails (if you have subscribed to updates)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-cookies&#34;&gt;3. Cookies&lt;/h2&gt;
+&lt;p&gt;We use cookies to enhance your experience on our website. Cookies are small files stored on your device that help us improve functionality and analyze website usage.&lt;/p&gt;
+&lt;h2 id=&#34;4-third-party-services&#34;&gt;4. Third-Party Services&lt;/h2&gt;
+&lt;p&gt;We may use third-party services, such as Google Analytics, to analyze website traffic. These services may collect information about your use of our website, and their use is governed by their respective privacy policies.&lt;/p&gt;
+&lt;h2 id=&#34;5-security&#34;&gt;5. Security&lt;/h2&gt;
+&lt;p&gt;We implement reasonable security measures to protect your personal information from unauthorized access, disclosure, alteration, and destruction. However, please be aware that no method of transmission over the internet or electronic storage is completely secure.&lt;/p&gt;
+&lt;h2 id=&#34;6-your-rights&#34;&gt;6. Your Rights&lt;/h2&gt;
+&lt;p&gt;You have the right to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Access the personal information we hold about you&lt;/li&gt;
+&lt;li&gt;Correct inaccuracies in your personal information&lt;/li&gt;
+&lt;li&gt;Request the deletion of your personal information&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To exercise these rights, please contact us at &lt;a href=&#34;mailto:deayan@outlook.com&#34;&gt;deayan@outlook.com&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;7-changes-to-this-privacy-policy&#34;&gt;7. Changes to This Privacy Policy&lt;/h2&gt;
+&lt;p&gt;We reserve the right to update this Privacy Policy at any time. Any changes will be effective immediately upon posting on this page. It is your responsibility to review this Privacy Policy periodically.&lt;/p&gt;
+&lt;h2 id=&#34;8-contact-information&#34;&gt;8. Contact Information&lt;/h2&gt;
+&lt;p&gt;If you have any questions or concerns regarding this Privacy Policy, please contact Davut Ayan at &lt;a href=&#34;mailto:deayan@outlook.com&#34;&gt;deayan@outlook.com&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Terms of Use</title>
+      <link>https://davutemrah.github.io/terms/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      <guid>https://davutemrah.github.io/terms/</guid>
+      <description>&lt;p&gt;Welcome to Davut Ayan&amp;rsquo;s Personal Portfolio Website. By accessing and using this website, you agree to comply with and be bound by the following terms and conditions of use. If you do not agree with any part of these terms, please do not use this website.&lt;/p&gt;
+&lt;h2 id=&#34;1-acceptance-of-terms&#34;&gt;1. Acceptance of Terms&lt;/h2&gt;
+&lt;p&gt;By using this website, you acknowledge that you have read, understood, and agree to be bound by these terms. Davut Ayan reserves the right to update or modify these terms at any time without prior notice. It is your responsibility to review these terms periodically.&lt;/p&gt;
+&lt;h2 id=&#34;2-intellectual-property&#34;&gt;2. Intellectual Property&lt;/h2&gt;
+&lt;p&gt;All content on this website, including but not limited to text, images, graphics, and code, is the property of Davut Ayan and is protected by intellectual property laws. You may not reproduce, distribute, or use any content from this site without the express written permission of Davut Ayan.&lt;/p&gt;
+&lt;h2 id=&#34;3-use-of-website&#34;&gt;3. Use of Website&lt;/h2&gt;
+&lt;p&gt;You agree to use this website for lawful purposes only and in a manner consistent with all applicable laws and regulations. You may not engage in any activity that could harm, disrupt, or interfere with the functionality of this website.&lt;/p&gt;
+&lt;h2 id=&#34;4-user-conduct&#34;&gt;4. User Conduct&lt;/h2&gt;
+&lt;p&gt;When using this website, you agree not to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Harass, threaten, or intimidate others.&lt;/li&gt;
+&lt;li&gt;Post or transmit offensive, defamatory, or inappropriate content.&lt;/li&gt;
+&lt;li&gt;Engage in any form of unauthorized advertising or spam.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;5-privacy-policy&#34;&gt;5. Privacy Policy&lt;/h2&gt;
+&lt;p&gt;Our Privacy Policy, which outlines how we collect, use, and protect your personal information, is an integral part of these terms. Please review our &lt;a href=&#34;link-to-privacy-policy&#34;&gt;Privacy Policy&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;h2 id=&#34;6-third-party-links&#34;&gt;6. Third-Party Links&lt;/h2&gt;
+&lt;p&gt;This website may contain links to third-party websites or resources. Davut Ayan is not responsible for the content or practices of these external sites. Use of third-party websites is at your own risk.&lt;/p&gt;
+&lt;h2 id=&#34;7-modifications-to-terms&#34;&gt;7. Modifications to Terms&lt;/h2&gt;
+&lt;p&gt;Davut Ayan reserves the right to modify these terms at any time. Changes will be effective immediately upon posting. Your continued use of the website after any modifications constitutes acceptance of the updated terms.&lt;/p&gt;
+&lt;h2 id=&#34;8-disclaimer&#34;&gt;8. Disclaimer&lt;/h2&gt;
+&lt;p&gt;The information on this website is provided &amp;ldquo;as is&amp;rdquo; without any warranties, expressed or implied. Davut Ayan makes no representations or warranties regarding the accuracy, completeness, or suitability of the information.&lt;/p&gt;
+&lt;h2 id=&#34;9-limitation-of-liability&#34;&gt;9. Limitation of Liability&lt;/h2&gt;
+&lt;p&gt;In no event shall Davut Ayan be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in any way connected with the use of this website.&lt;/p&gt;
+&lt;h2 id=&#34;10-governing-law&#34;&gt;10. Governing Law&lt;/h2&gt;
+&lt;p&gt;These terms are governed by the laws of State of Illinois, and any disputes relating to these terms will be subject to the exclusive jurisdiction of the courts in State of Illinois.&lt;/p&gt;
+&lt;h2 id=&#34;11-contact-information&#34;&gt;11. Contact Information&lt;/h2&gt;
+&lt;p&gt;If you have any questions or concerns regarding these terms, please contact Davut Ayan at &lt;a href=&#34;mailto:deayan@outlook.com&#34;&gt;deayan@outlook.com&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

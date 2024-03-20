@@ -25,7 +25,7 @@ Here are the books:
 [5. Machine Learning and Projects](https://davutemrah.github.io/07_ML_Projects/)
 
 
-[6. Statistics and Causal Inference](https://davutemrah.github.io/07_ML_Projects/)
+[6. Statistics and Causal Inference](https://davutemrah.github.io/statistics_and_causal/)
 
 
 [7. Job Interview Resources](https://davutemrah.github.io/07_ML_Projects/)

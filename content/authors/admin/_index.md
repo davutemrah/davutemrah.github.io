@@ -90,6 +90,11 @@ social:
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/davutayan/
+  
+  
+- icon: medium
+  icon_pack: fab
+  link: https://medium.com/@demrahayan
 # - icon: cv
 #   icon_pack: ai
 #   link: uploads/DS.pdf

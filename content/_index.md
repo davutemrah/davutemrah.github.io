@@ -233,12 +233,12 @@ sections:
 - block: contact
   content:
     address:
-      city: New York
+      city: Chicago
       country: United States
       country_code: US
-      postcode: "10013"
-      region: NY
-      street: 75 Varick st
+      postcode: "60601"
+      region: IL
+      street:  
     # appointment_url: https://calendly.com
     autolink: true
     contact_links:
@@ -255,8 +255,8 @@ sections:
     #   link: https://zoom.com
     #   name: Zoom Me
     coordinates:
-      latitude: "40.7236"
-      longitude: "-74.0064"
+      latitude: "41.878"
+      longitude: "-87.629"
     # directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
     email: deayan@outlook.com
     # form:

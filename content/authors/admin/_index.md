@@ -13,21 +13,21 @@ education:
     institution: National Defense University
     year: 2007
     
-first_name: Davut Emrah
+first_name: Davut
 highlight_name: true
 
 interests:
-- Machine Learning
 - Causal Inference
-- Applied Microeconomics
+- Machine Learning
+- Generative AI
 
 last_name: Ayan
 # name_pronunciation: Chien Shiung Wu
 
 organizations:
-- name: "Marketing Sciences @ Horizon Media"
+- name: "Horizon Media"
   url: https://www.horizonmedia.com/
-role: Associate Director
+role: Marketing Data Scientist
 
 skills:
 - items:
@@ -105,7 +105,7 @@ status:
 # title: chinese vardi
 
 superuser: true
-title: Davut Emrah Ayan
+title: Davut Ayan
 ---
 
 <style>

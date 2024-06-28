@@ -1,0 +1,342 @@
+---
+title: "Next Word Prediction"
+author: "Davut Ayan"
+date: '2022-02-04'
+slug: 
+categories: ["LLM"]
+#tags: ["R", "Web Scraping", "rvest", "Other"]
+
+tags:
+- LLM
+
+subtitle: ''
+summary: 'This project is a R `Shiny` Web Application that uses `Stupid Back-off` N-gram models, a `Large Language Model`, to predict next words given input text.'
+lastmod: "`r Sys.Date()`"
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+#link: https://davutemrah.github.io
+
+links:
+- icon: github
+  icon_pack: fab
+  name: Repo
+  url: https://github.com/davutemrah/NextWordPrediction
+
+- icon: none
+  icon_pack: fab
+  name: Slides
+  url: https://davutemrah.github.io/NextWordPrediction/#1
+---
+
+
+(nextword.html)
+
+```{r setup, eval=FALSE}
+knitr::opts_chunk$set(cache.path = "./cache")
+knitr::opts_chunk$set(cache = TRUE)
+rm(list=ls())
+library(tidyverse)
+library(tidytext)  # tokenization
+library(stringi)
+library(dtplyr)
+library(wordcloud)
+```
+
+## Project: What is the next word?
+
+### Introduction
+
+In this capstone project, we are given three sources of text such as twitter, blog and news written in English. We are expected to build a statistical model making  text predictions given one or more texts/words.
+
+I will start my project reading the data and explore some insights.
+
+### Data
+
+We have three sources of data. Following code will download and unzip the file.
+
+```{r, eval=FALSE}
+url <- "https://d396qusza40orc.cloudfront.net/dsscapstone/dataset/Coursera-SwiftKey.zip"
+
+if(!file.exists("./data")){
+  dir.create("./data")
+  download.file(url, destfile="./data/Coursera-SwiftKey.zip", mode = "wb")
+  unzip(zipfile="./data/Coursera-SwiftKey.zip", exdir="./data")
+}
+```
+
+### Load Data
+
+Here is a function to read the raw data
+
+```{r, eval=FALSE}
+read_raw_text <- function(input, output){
+    con <- file(input, open = "r")
+    output <- readLines(con = con, encoding = "UTF-8", skipNul = TRUE)
+    close(con = con) # closing connection is important
+    output
+}
+```
+
+**Twitter data**
+
+```{r, eval=FALSE}
+twitter <- read_raw_text("data/final/en_US/en_US.twitter.txt")
+#stri_stats_general(twitter) # basic info
+head(twitter, n=3)
+```
+
+```{r, eval=FALSE}
+paste("US_twitter data has", length(twitter), "lines")
+paste("Size of the twitter file is about", 
+      round(object.size(twitter)/1024^2, 3), "MB")
+paste("Longest line has", max(str_length(twitter)), "characters")
+```
+
+**Blogs Data**
+
+```{r, eval=FALSE}
+blog <- read_raw_text("data/final/en_US/en_US.blogs.txt")
+#stri_stats_general(blog) # basic info
+head(blog, n=3)
+```
+
+As seen above, there seems to be more words in blog data, than twitter data.
+
+```{r, eval=FALSE}
+paste("US_blogs data has", length(blog), "lines")
+paste("size of the blogs file is about", round(object.size(blog)/1024^2, 3), "MB")
+paste("Longest line has", max(str_length(blog)), "characters")
+```
+
+**News Data**
+
+```{r, eval=FALSE}
+news <- read_raw_text("data/final/en_US/en_US.news.txt")
+#stri_stats_general(news) # basic info
+head(news, n=3)
+```
+
+```{r, eval=FALSE}
+paste("US_news data has", length(news), "lines")
+paste("Size of the news file is about", 
+      round(object.size(news)/1024^2, 3), "MB")
+paste("Longest line has", max(str_length(news)), "characters")
+```
+
+### Corpus Creation
+
+We have three big data sets. I will take 1% random samples from each to create the corpus. This will provide enough coverage to explore data and build a prediction model.
+
+I combine 1% samples of each data sets into one corpus.
+
+```{r, eval=FALSE}
+set.seed(1234) 
+samples <- function(file, fraction){
+    output <- sample(file, size = fraction*length(file), replace = FALSE)
+}
+
+blog_s <- samples(blog, fraction=0.01)
+news_s <- samples(news, fraction=0.01)
+twitter_s <- samples(twitter, fraction=0.01)
+corpus <- c(blog_s, news_s, twitter_s)
+```
+
+#### Training and Test samples
+
+I will divide the 1% samples of each data sets into 80% for training and 20% test samples.
+
+```{r, eval=FALSE}
+set.seed(1234)
+train <-  c(sample(blog_s, size = 0.8*length(blog_s)),
+                  sample(news_s, size = 0.8*length(news_s)),
+                  sample(twitter_s, size = 0.8*length(twitter_s)))
+
+test <- setdiff(corpus, train)
+rm(blog_s, news_s,twitter_s)
+```
+
+
+**Text Cleaning**
+
+There are several factor we need to consider when cleaning/normalizing text data. And there are pros/cons about how much we clean the text data. 
+
+There are punctuation combining the words, replacing the letters, stopping the sentences and repetitions. In many applications you can observe any type of punctuation may be erased or some of them kept untouched.
+
+Examples: "I'am", "middle-class", "stop!", "what?", "apple, banana" etc.
+
+- I chose to erase numbers, since they can be confusing and not predictable.
+- I transform all alphabetic characters to lowercase.
+- I erase unnecessary white-space.
+- Non-ASCII symbols are to be removed
+
+- **Stop-words** are common words are dropped in most text-mining applications, because they have low information. But in this project we build a text prediction model and, I prefer to keep them for now. 
+
+- **Stemming** is another factor when processing text data before training model. 
+
+- Profanity filter is another subject to consider. There are collections available to use but I prefer not to use at this time.
+
+```{r, eval=FALSE}
+train_df <- as_tibble(train)
+train_df$value <- str_replace_all(train_df$value, c("[:punct:]" = " ", 
+                        "[0-9]" = "", "[:space:]+" = " "))
+```
+
+### Tokenization
+
+For text mining purposes I will use functions from `tidytext` library. I transform sentences into one word in a row, then exclude missing values.
+
+Then I can calculate frequencies of the words and sort them in descending order.
+
+**One-Word**
+
+Here I show most 20 frequently used words in a graph. Most frequent word is "the". 
+
+```{r, eval=FALSE}
+oneword <-
+train_df %>%
+    unnest_tokens(output = word, input = value, to_lower = TRUE) %>%
+    drop_na(word) %>%
+    count(word, sort = TRUE)
+
+ggplot(oneword[1:20, ], aes(x = reorder(word, -n), y = n)) +
+    geom_bar(stat = "identity", fill = "steelblue") +
+    geom_text(aes(label=n), vjust=1.6, color="white", size=2.5) +
+    theme(axis.text.y=element_blank(), axis.ticks.y=element_blank()) +
+    ggtitle("20 Most Frequently Used Words") + 
+    theme(plot.title = element_text(hjust = 0.5)) +
+    ylab("Frequency") + xlab("Words") 
+
+```
+
+**Two-word Distribution**
+
+```{r, eval=FALSE}
+twoword <-
+train_df %>%
+    unnest_tokens(output = word, input = value,
+                  token = "ngrams", n = 2,
+                  to_lower = TRUE) %>%
+    drop_na(word) %>%
+    count(word, sort = TRUE)
+
+ggplot(twoword[1:20, ], aes(x = reorder(word, -n), y = n)) +
+    geom_bar(stat = "identity", fill = "steelblue") +
+    geom_text(aes(label=n), vjust=1.6, color="white", size=2.5) +
+    theme(axis.text.y=element_blank(), axis.ticks.y=element_blank()) +
+    ggtitle("20 Most Frequently Used Word Couples") + 
+    theme(plot.title = element_text(hjust = 0.5)) +
+    ylab("Frequency") + xlab("Word Couples") +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+```
+
+Most frequent word couple is "of the". 
+
+**Three-word Distribution**
+
+```{r, eval=FALSE}
+triword <-
+train_df %>%
+    unnest_tokens(output = word, input = value,
+                  token = "ngrams", n = 3,
+                  to_lower = TRUE) %>%
+    drop_na(word) %>%
+    count(word, sort = TRUE)
+
+ggplot(triword[1:20, ], aes(x = reorder(word, -n), y = n)) +
+    geom_bar(stat = "identity", fill = "steelblue") +
+    geom_text(aes(label=n), vjust=1.6, color="white", size=3.5) +
+    theme(axis.text.y=element_blank(), axis.ticks.y=element_blank()) +
+    ggtitle("20 Most Frequently Used Word Triplets") + 
+    theme(plot.title = element_text(hjust = 0.5)) +
+    ylab("Frequency") + xlab("Word Triplets") +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+```
+
+**Four-word Distribution**
+
+```{r, eval=FALSE}
+fourword <-
+train_df %>%
+    unnest_tokens(output = word, input = value,
+                  token = "ngrams", n = 4,
+                  to_lower = TRUE) %>%
+    drop_na(word) %>%
+    count(word, sort = TRUE)
+
+ggplot(fourword[1:20, ], aes(x = reorder(word, -n), y = n)) +
+    geom_bar(stat = "identity", fill = "steelblue") +
+    geom_text(aes(label=n), vjust=1.6, color="white", size=3.5) +
+    theme(axis.text.y=element_blank(), axis.ticks.y=element_blank()) +
+    ggtitle("20 Most Frequently Used four-word phrases") + 
+    theme(plot.title = element_text(hjust = 0.5)) +
+    ylab("Frequency") + xlab("four-word phrases") +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+```
+
+So far, I have investigated the data making frequency tables to see what words are used more often together.
+
+In the next steps I would like to start building the model to predict the next text based on the given word/words.
+
+### Word Coverage
+
+How many unique words do you need in a frequency sorted dictionary to cover 50% of all word instances in the language? 90%? 
+
+Can you think of a way to increase the coverage -- identifying words that may not be in the corpora or using a smaller number of words in the dictionary to cover the same number of phrases?
+
+How Many of the top words are required to cover a given percentage of words present in the entire data-set?
+
+We are going to answer this question by finding out how the number of words covered in the data-set increases as we add words from the most frequent to the least frequent:
+
+```{r, eval=FALSE}
+oneword_coverage <-
+    oneword %>%
+    mutate(coverage = round(cumsum(n) / sum(n) * 100, 2),
+           ranking = 1:nrow(oneword)) 
+    
+oneword_coverage
+```
+
+```{r, eval=FALSE}
+oneword_coverage %>%
+    ggplot(aes(x = ranking, y = coverage)) + geom_line(stat = "identity")
+```
+
+```{r, eval=FALSE}
+min50 <- min(oneword_coverage[oneword_coverage$coverage > 50, ]$ranking)
+min90 <- min(oneword_coverage[oneword_coverage$coverage > 90, ]$ranking)
+
+paste("Minimum number of top words for 50% coverage is", min50)
+paste("Minimum number of top words for 90% coverage is", min90)
+```
+
+
+### Model Setup
+
+as.character
+
+```{r, eval=FALSE}
+library(sbo)
+
+p <- sbo_predictor(object = as.character(corpus), 
+                   N = 3, # Train a 3-gram model
+                   dict = target ~ 0.75, # cover 75% of training corpus
+                   .preprocess = preprocess, # Pre-processing transformation 
+                   EOS = ".?!:;", # End-Of-Sentence tokens
+                   lambda = 0.4, # Back-off penalization in SBO algorithm
+                   L = 5L, # Number of predictions for input
+                   filtered = "<UNK>" # Exclude the <UNK> token from predictions
+)
+```
+
+
+```{r, eval=FALSE}
+predict(p, "Exclude the")
+```
+
+
+
+

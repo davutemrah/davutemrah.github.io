@@ -7,12 +7,12 @@ main:
   - name: Home
     url: '#about'
     weight: 10
-  - name: Posts
-    url: '#posts'
-    weight: 20
-  # - name: Projects
-  #   url: '#projects'
-  #   weight: 30
+  # - name: Posts
+  #   url: '#posts'
+  #   weight: 20
+  - name: Projects
+    url: '#projects'
+    weight: 30
   # - name: Notebooks
   #   url: 'https://davutemrah.github.io/python_book-repo/'
   #   weight: 40

@@ -117,49 +117,66 @@ sections:
 #   design:
 #     columns: "2"
 
-- block: collection
+# - block: collection
+#   content:
+#     count: 5
+#     filters:
+#       author: ""
+#       category: ""
+#       exclude_featured: false
+#       exclude_future: false
+#       exclude_past: false
+#       folders:
+#       - post
+#       publication_type: ""
+#       tag: ""
+#     offset: 0
+#     order: desc
+#     subtitle: ""
+#     text: ""
+#     title: Recent Posts
+#   design:
+#     columns: "2"
+#     view: compact
+#   id: posts
+
+### title projects
+- block: portfolio
   content:
+    title: Projects
+    offset: 0
     count: 5
+    buttons:
+    - name: All
+      tag: '*'
+      
+    - name: Causal Inference
+      tag: causal
+    
+    - name: Machine Learning
+      tag: ML
+      
+    - name: Gen AI
+      tag: LLM
+      
+    - name: Other
+      tag: misc
+    default_button_index: 0
+    
     filters:
-      author: ""
-      category: ""
-      exclude_featured: false
-      exclude_future: false
-      exclude_past: false
       folders:
       - post
-      publication_type: ""
-      tag: ""
-    offset: 0
-    order: desc
-    subtitle: ""
-    text: ""
-    title: Recent Posts
+#      - project ## for projects
+      exclude_featured: false
+      order: desc
+
   design:
     columns: "2"
+    flip_alt_rows: false
+#    view: showcase
     view: compact
-  id: posts
-
-# ### title projects
-# - block: portfolio
-#   content:
-#     buttons:
-#     - name: All
-#       tag: '*'
-#     - name: Deep Learning
-#       tag: Deep Learning
-#     - name: Other
-#       tag: Demo
-#     default_button_index: 0
-#     filters:
-#       folders:
-#       - project
-#     title: Projects
-#   design:
-#     columns: "1"
-#     flip_alt_rows: false
-#     view: showcase
-#   id: projects
+#    view: card    
+  id: projects
 
 # - block: markdown
 #   content:

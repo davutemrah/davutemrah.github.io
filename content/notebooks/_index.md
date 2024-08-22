@@ -34,6 +34,7 @@ Here are the books:
 [8. Useful websites](https://davutemrah.github.io/3_Resources/)
 
 
+[9. SQL Book](https://davutemrah.github.io/20_sql_book/)
 
 
 

@@ -16,7 +16,7 @@ Here are the books:
 [2. R Programming](https://davutemrah.github.io/2.-R-book-repo/)
 
 
-[3. Spark Programming](https://davutemrah.github.io/spark_repo/)
+[3. Spark Programming](https://davutemrah.github.io/)
 
 
 [4. Marketing Analytics](https://davutemrah.github.io/4.Marketing_analytics/)
@@ -28,13 +28,7 @@ Here are the books:
 [6. Statistics and Causal Inference](https://davutemrah.github.io/10_Causal_Notes/)
 
 
-[7. Job Interview Resources](https://davutemrah.github.io/07_ML_Projects/)
-
-
-[8. Useful websites](https://davutemrah.github.io/3_Resources/)
-
-
-[9. SQL Book](https://davutemrah.github.io/20_sql_book/)
+[7. SQL Book](https://davutemrah.github.io/20_sql_book/)
 
 
 

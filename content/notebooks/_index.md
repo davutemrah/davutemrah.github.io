@@ -31,4 +31,5 @@ Here are the books:
 [7. SQL Book](https://davutemrah.github.io/20_sql_book/)
 
 
+[8. Courses](https://davutemrah.github.io/3_Resources/)
 

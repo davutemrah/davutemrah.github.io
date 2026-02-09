@@ -1,5 +1,5 @@
 ---
-bio: I am an experienced data scientist expert in Machine Learning, causal inference and soccer.
+bio: I am an experienced data scientist focused on machine learning and causal inference.
 
 education:
   courses:
@@ -25,9 +25,9 @@ last_name: Ayan
 # name_pronunciation: Chien Shiung Wu
 
 organizations:
-- name: "Horizon Media"
-  url: https://www.horizonmedia.com/
-role: Marketing Data Scientist
+- name: "Publicis Starcom"
+  url: https://www.starcomww.com/
+role: Senior Data Scientist
 
 skills:
 - items:
@@ -113,7 +113,7 @@ body {
 text-align: justify}
 </style>
 
-I am an experienced Data Scientist currently serving as the Associate Director in Marketing Sciences at Horizon Media, NY, my focus lies in applying causal inference models and machine learning algorithms to extract meaningful insights from extensive consumer datasets. I am particularly intrigued by the potential of these analytical approaches to uncover patterns, trends, and causal relationships within large-scale consumer data, ultimately contributing valuable insights for informed decision-making in the dynamic field of marketing.
+I am a Senior Data Scientist at Publicis Starcom (Chicago, IL), working on audience strategy and analytics. I build purchase-based behavioral segments from multiple data sources and productionize reusable Databricks jobs for lookalike modeling, overlap/UpSet reporting, and data integrity QA. Previously, I worked in Marketing Sciences at Horizon Media.
 
 {style="text-align: justify;"}
 

@@ -50,35 +50,24 @@ sections:
   design:
     columns: "1"
 
-# - block: experience
-#   content:
-#     date_format: Jan 2006
-#     items:
-#     - company: Horizon Media
-#       company_logo: 
-#       company_url: https://www.horizonmedia.com
-#       date_end: ""
-#       date_start: "2022-03-21"
-#       description: |2-
-#           Responsibilities include:
-# 
-#           * Audience Optimization
-#           * Predictive Modelling
-#           * Campaign Analysis
-#           
-#       location: New York
-#       title: Associate Director
-  #   - company: IPSR @ University of Kansas
-  #     company_logo: org-x
-  #     company_url: https://ipsr.ku.edu
-  #     date_end: "2022-03-21"
-  #     date_start: "2021-02-01"
-  #     description: Social Science Research
-  #     location: Kansas
-  #     title: Post Doctoral Researcher
-  #   title: Experience
-  # design:
-  #   columns: "2"
+- block: experience
+  content:
+    title: Experience
+    date_format: Jan 2006
+    items:
+    - company: Publicis Starcom
+      location: Chicago, IL (Hybrid)
+      company_url: https://www.starcomww.com/
+      date_start: "2025-10-01"
+      title: Senior Data Scientist
+      description: |2-
+          * Drive audience strategy by creating purchase-based behavioral segments using multiple data sources.
+          * Developed reusable lookalike modeling pipelines as parameterized Databricks jobs (PySpark/SQL).
+          * Built an overlap and UpSet-plot reporting job in Databricks to quantify audience intersections.
+          * Perform data integrity and QA analysis (schema/volume checks, anomalies, reconciliation) for reliable refreshes.
+          * Deliver ad hoc analysis to support planning, optimization, and stakeholder decision-making.
+  design:
+    columns: "2"
 
 
 # - block: accomplishments

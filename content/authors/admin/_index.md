@@ -1,5 +1,5 @@
 ---
-bio: I am an experienced data scientist focused on machine learning and causal inference.
+bio: Senior Data Scientist with 5+ years of experience in machine learning, causal inference, and marketing analytics.
 
 education:
   courses:
@@ -113,7 +113,7 @@ body {
 text-align: justify}
 </style>
 
-I am a Senior Data Scientist at Publicis Starcom (Chicago, IL), working on audience strategy and analytics. I build purchase-based behavioral segments from multiple data sources and productionize reusable Databricks jobs for lookalike modeling, overlap/UpSet reporting, and data integrity QA. Previously, I worked in Marketing Sciences at Horizon Media.
+I am a Senior Data Scientist at Publicis Starcom (Chicago, IL) with 5+ years of experience in machine learning, generative AI, and causal inference for marketing and business intelligence. I use Python, R, and SQL to deliver predictive modeling, customer segmentation, and A/B testing that improve campaign performance and optimize ad spend. I build scalable analytics solutions on Snowflake, Azure, and Databricks, lead cross-functional initiatives, and mentor junior data scientists to turn complex data into clear business action.
 
 {style="text-align: justify;"}
 
